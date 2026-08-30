@@ -1,0 +1,25 @@
+services:
+
+  dev:
+    image: devops-app:1.0
+    container_name: devops-dev
+    env_file:
+      - ./environments/dev.env
+    ports:
+      - "5001:5000"
+
+  staging:
+    image: devops-app:1.0
+    container_name: devops-staging
+    env_file:
+      - ./environments/staging.env
+    ports:
+      - "5002:5000"
+
+  prod:
+    image: devops-app:1.0
+    container_name: devops-prod
+    env_file:
+      - ./environments/prod.env
+    ports:
+      - "5003:5000"
